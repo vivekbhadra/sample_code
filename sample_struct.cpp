@@ -10,13 +10,31 @@ struct StudentInfo
     double pocket_money;
 };
 
+int add_numbers(int x, int y)
+{
+    int result;
+    int var1;
+    int var2;
+
+    var1 = x;
+    var2 = y;
+
+    result = var1 + var2;
+    return result;
+}
+
 int main()
 {
+    int value = add_numbers(20, 30);
+    std::cout << value << "\n";
+
+    value = add_numbers(50, 40);
+    std::cout << value << "\n";
 
     while (1)
     {
-        char reply;
         struct StudentInfo myStudent;
+        char reply;
         std::cout << "Enter Student's Name: ";
         std::cin >> myStudent.name;
         std::cout << "Enter Student's ID: ";
@@ -36,9 +54,18 @@ int main()
         std::cout << "Stdudent's Pocket Money = " << myStudent.pocket_money << "\n";
 
         std::cout << "\n";
-        std::cout << "Do you want to continue?(y/n): ";
-        std::cin >> reply;
-        if (reply == 'n')
+        bool valid_input = false;
+        while (!valid_input)
+        {
+            std::cout << "Do you want to continue?(y/N) ";
+            std::cin >> reply;
+
+            if (reply == 'y' || reply == 'N')
+            {
+                valid_input = true;
+            }
+        }
+        if (reply == 'N')
         {
             break;
         }

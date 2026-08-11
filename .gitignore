@@ -1,0 +1,17 @@
+
+# Compiled binaries and generated build artefacts
+*.o
+*.obj
+*.s
+*.out
+*.exe
+a.out
+
+brace_initialiser
+extern_test
+if_else_if
+remainder_operator
+sample
+static_example
+sum_even_numbers
+tictactoe_solution
