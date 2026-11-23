@@ -5,7 +5,8 @@
 std::vector<Student> make_student_database()
 {
     std::vector<Student> students;
-    students.reserve(20);
+    students.reserve(
+        20); // why reserve? To avoid multiple reallocations as we add students to the vector, improving performance.
     students.emplace_back("Amira Ali", 19, 15.00, 1001);
     students.emplace_back("Ben Scott", 18, 12.50, 1002);
     students.emplace_back("Chloe Adams", 20, 20.00, 1003);
@@ -29,11 +30,9 @@ std::vector<Student> make_student_database()
     return students;
 }
 
-void display_student(const Student& student)
+void display_student(const Student &student)
 {
-    std::cout << "ID: " << student.get_student_id()
-              << " | Name: " << student.get_name()
-              << " | Age: " << student.get_age()
-              << " | Pocket money: " << std::fixed << std::setprecision(2)
+    std::cout << "ID: " << student.get_student_id() << " | Name: " << student.get_name()
+              << " | Age: " << student.get_age() << " | Pocket money: " << std::fixed << std::setprecision(2)
               << student.get_pocket_money() << '\n';
 }
